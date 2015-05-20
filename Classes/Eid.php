@@ -1,6 +1,7 @@
 <?php
 
 namespace Linkfactory\Globalcontent;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class to handle outside requests (eID).
@@ -18,33 +19,56 @@ class Eid {
 	 * @return void
 	 */
 	public function main() {
-		switch (\TYPO3\CMS\Core\Utility\GeneralUtility::_GET("mode")) {
+		switch (GeneralUtility::_GET("mode")) {
 
 			// Show remote page to choose element.
 			case "chooseElement":
-				$url = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET("url");
+				$url = GeneralUtility::_GET("url");
 				$this->chooseElement($url);
 				break;
 
 			// Receive chosen element-id.
 			case "fetchElement":
-				$fetchUrl = trim(\TYPO3\CMS\Core\Utility\GeneralUtility::_POST("fetchUrl"));
-				$cid = intval(\TYPO3\CMS\Core\Utility\GeneralUtility::_POST("cid"));
-				$elementId = intval(\TYPO3\CMS\Core\Utility\GeneralUtility::_POST("elementId"));
+				$fetchUrl = trim(GeneralUtility::_POST("fetchUrl"));
+				$cid = intval(GeneralUtility::_POST("cid"));
+				$elementId = intval(GeneralUtility::_POST("elementId"));
 				$this->fetchElement($fetchUrl, $cid, $elementId);
 				break;
 
 			// Show element for preview in backend.
 			case "showElement":
-				$url = trim(\TYPO3\CMS\Core\Utility\GeneralUtility::_GET("url"));
+				$url = trim(GeneralUtility::_GET("url"));
 				$this->showElement($url);
 				break;
 
 			default:
-				die("No access");
+				// Sniff if we are trying to fetch an element using the old url
+				if ($elementId = intval(GeneralUtility::_GET('elementId'))) {
+					$this->legacyFetch($elementId);
+				}
+				else {
+					die("No access");
+				}
 				break;
 
 		}
+	}
+
+	/**
+	 * Get an element from local installation using the legacy url scheme
+	 * @param  integer  $elementId   Uid for element
+	 * @return void
+	 */
+	private function legacyFetch($elementId) {
+		global $TYPO3_DB;
+
+		// The element should be fetched from the proper page in order for the new
+		// scheme to work properly
+		$rs = $TYPO3_DB->exec_SELECTquery('pid', 'tt_content', "uid = $elementId");
+		list($pid) = $TYPO3_DB->sql_fetch_row($rs);
+
+		// Use this to fetch with the proper url-scheme
+		echo file_get_contents(GeneralUtility::getIndpEnv('TYPO3_REQUEST_HOST') . '/index.php?no_cache=1&type=9002&id=' . $pid . '&cid=' . $elementId);
 	}
 
 	/**
@@ -126,7 +150,7 @@ class Eid {
 	 * @return string.
 	 */
 	private function getSiteUrl() {
-		return \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_SITE_URL');
+		return GeneralUtility::getIndpEnv('TYPO3_SITE_URL');
 	}
 
 	/**
