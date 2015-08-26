@@ -52,8 +52,8 @@
         <target>Global content for remote sider som har Global Content installeret.</target>
       </trans-unit>
       <trans-unit xml:space="preserve" approved="yes" id="noContentUid">
-        <source>Element not saved. Not possible to show form.</source>
-        <target>Element er ikke gemt. Det er ikke muligt at vise form.</target>
+        <source>Element should be saved first, before the list can be edited.</source>
+        <target>Element skal gemmes først, inden listen kan redigeres.</target>
       </trans-unit>
     </body>
   </file>

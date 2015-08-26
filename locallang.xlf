@@ -40,7 +40,7 @@
         <source>Global content for remote sites which have Global Content installed.</source>
       </trans-unit>
       <trans-unit xml:space="preserve" approved="yes" id="noContentUid">
-        <source>Element not saved. Not possible to show form.</source>
+        <source>Element should be saved first, before the list can be edited.</source>
       </trans-unit>
     </body>
   </file>
