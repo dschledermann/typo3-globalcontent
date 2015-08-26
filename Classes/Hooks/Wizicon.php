@@ -36,11 +36,11 @@ class Wizicon {
 	function includeLocalLang()    {
 		if (class_exists("\\TYPO3\\CMS\\Core\\Utility\\GeneralUtility")) {
 			$LOCAL_LANG = \TYPO3\CMS\Core\Utility\GeneralUtility::readLLfile(
-				\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('globalcontent') . 'locallang.xml',
+				\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('globalcontent') . 'locallang.xlf',
 				$GLOBALS['LANG']->lang
 			);
 		} else {
-			$llFile = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('globalcontent') . 'locallang.xml';
+			$llFile = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('globalcontent') . 'locallang.xlf';
 			$LOCAL_LANG = \TYPO3\CMS\Core\Utility\GeneralUtility::readLLXMLfile($llFile, $GLOBALS['LANG']->lang);
 		}
 		return $LOCAL_LANG;

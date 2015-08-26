@@ -15,7 +15,7 @@ class Userfuncs {
 	 */
 	public function __construct() {
 		$this->lang = $GLOBALS["LANG"];
-		$this->lang->includeLLFile('EXT:globalcontent/locallang.xml');
+		$this->lang->includeLLFile('EXT:globalcontent/locallang.xlf');
 	}
 
 	/**

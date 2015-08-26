@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="globalcontent" date="2015-08-26T09:55:58Z">
+    <header/>
+    <body>
+      <trans-unit xml:space="preserve" approved="yes" id="pi_title">
+        <source>Global content</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="chooseFetcher">
+        <source>Choose fetcher</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="enterUrl">
+        <source>Enter url</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="urlToPreviousPage">
+        <source>Url to previous page</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="preview">
+        <source>Preview</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="fetcherGlobal">
+        <source>Global - controlled by global configuration</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="fetcherPassthrough">
+        <source>Passthrough - no caching</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="fetcherCached">
+        <source>Cached - use caching framework</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="fetcherjQuery">
+        <source>jQuery - loading with sliding and fading</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="fetcherVarnish">
+        <source>Varnish - cached controlled by Varnish</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="pi_title">
+        <source>Global content</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="pi_plus_wiz_description">
+        <source>Global content for remote sites which have Global Content installed.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="noContentUid">
+        <source>Element not saved. Not possible to show form.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

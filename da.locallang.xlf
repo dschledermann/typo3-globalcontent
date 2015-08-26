@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+  <file source-language="en" target-language="da" datatype="plaintext" original="messages" product-name="globalcontent" date="2015-08-26T09:56:30Z">
+    <header/>
+    <body>
+      <trans-unit xml:space="preserve" approved="yes" id="pi_title">
+        <source>Global content</source>
+        <target>Globalt indhold</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="chooseFetcher">
+        <source>Choose fetcher</source>
+        <target>Vælg fetcher</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="enterUrl">
+        <source>Enter url</source>
+        <target>Indtast url</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="urlToPreviousPage">
+        <source>Url to previous page</source>
+        <target>Url til forrige side</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="preview">
+        <source>Preview</source>
+        <target>Forhåndsvisning</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="fetcherGlobal">
+        <source>Global - controlled by global configuration</source>
+        <target>Global - styret of global indstillinger</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="fetcherPassthrough">
+        <source>Passthrough - no caching</source>
+        <target>Passthrough - ingen caching</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="fetcherCached">
+        <source>Cached - use caching framework</source>
+        <target>Cached - brug caching framework</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="fetcherjQuery">
+        <source>jQuery - loading with sliding and fading</source>
+        <target>jQuery - indlæsning med sliding og fading</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="fetcherVarnish">
+        <source>Varnish - cached controlled by Varnish</source>
+        <target>Varnish - cache styret af Varnish</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="pi_title">
+        <source>Global content</source>
+        <target>Global content</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="pi_plus_wiz_description">
+        <source>Global content for remote sites which have Global Content installed.</source>
+        <target>Global content for remote sider som har Global Content installeret.</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="noContentUid">
+        <source>Element not saved. Not possible to show form.</source>
+        <target>Element er ikke gemt. Det er ikke muligt at vise form.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

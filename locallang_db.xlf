@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="globalcontent" date="2015-08-26T09:56:51Z">
+    <header/>
+    <body>
+      <trans-unit xml:space="preserve" approved="yes" id="tt_content.CType_pi1">
+        <source>Global content</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
