@@ -32,7 +32,8 @@ class Eid {
 				$fetchUrl = trim(GeneralUtility::_POST("fetchUrl"));
 				$cid = intval(GeneralUtility::_POST("cid"));
 				$elementId = intval(GeneralUtility::_POST("elementId"));
-				$this->fetchElement($fetchUrl, $cid, $elementId);
+				$L = intval(GeneralUtility::_POST("L"));
+				$this->fetchElement($fetchUrl, $cid, $elementId, $L);
 				break;
 
 			// Show element for preview in backend.
@@ -44,7 +45,8 @@ class Eid {
 			default:
 				// Sniff if we are trying to fetch an element using the old url
 				if ($elementId = intval(GeneralUtility::_GET('elementId'))) {
-					$this->legacyFetch($elementId);
+					$L = intval(GeneralUtility::_GET('L'));
+					$this->legacyFetch($elementId, $L);
 				}
 				else {
 					die("No access");
@@ -57,9 +59,10 @@ class Eid {
 	/**
 	 * Get an element from local installation using the legacy url scheme
 	 * @param  integer  $elementId   Uid for element
+	 * @param  integer  $L           Language for element
 	 * @return void
 	 */
-	private function legacyFetch($elementId) {
+	private function legacyFetch($elementId, $L = 0) {
 		global $TYPO3_DB;
 
 		// The element should be fetched from the proper page in order for the new
@@ -68,7 +71,8 @@ class Eid {
 		list($pid) = $TYPO3_DB->sql_fetch_row($rs);
 
 		// Use this to fetch with the proper url-scheme
-		echo file_get_contents(GeneralUtility::getIndpEnv('TYPO3_REQUEST_HOST') . '/index.php?no_cache=1&type=9002&id=' . $pid . '&cid=' . $elementId);
+		$url = GeneralUtility::getIndpEnv('TYPO3_REQUEST_HOST') . '/index.php?no_cache=1&type=9002&id=' . $pid . '&cid=' . $elementId . '&L=' . $L;
+		echo file_get_contents($url);
 	}
 
 	/**
@@ -97,15 +101,17 @@ class Eid {
 	 * @param string $url
 	 * @param number $cid
 	 * @param number $elementId
+	 * @param number $L
 	 * @return void
 	 */
-	private function fetchElement($url, $cid, $elementId) {
+	private function fetchElement($url, $cid, $elementId, $L = 0) {
 
 		// Build url to fetch element.
 		$parameters = array(
 			"type" => self::PAGE_TYPE_SINGLE,
 			"no_cache" => 1,
-			"cid" => $cid
+			"cid" => $cid,
+			"L" => $L,
 		);
 		$fetchUrl = $this->buildUrl($url, $parameters);
 
