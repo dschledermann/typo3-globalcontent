@@ -24,5 +24,5 @@ globalContentSingle {
 
 [globalVar = TSFE:type = 9001]
   lib.leftmenu >
-  tt_content.stdWrap.dataWrap = <div style="border: 1px solid red; padding: 10px 10px 10px 10px;">|<form method=post action="{GP:callbackUrl}"><input type="hidden" name="fetchUrl" value="{GP:fetchUrl}"><input type="hidden" name="cid" value="{field:uid}"><input type="hidden" name="elementId" value="{GP:elementId}"><input type="submit" value="V&aelig;lg" /></form></div>
+  tt_content.stdWrap.dataWrap = <div style="border: 1px solid red; padding: 10px 10px 10px 10px;">|<form method=post action="{GP:callbackUrl}"><input type="hidden" name="fetchUrl" value="{GP:fetchUrl}"><input type="hidden" name="cid" value="{field:uid}"><input type="hidden" name="L" value="{GP:L}"><input type="hidden" name="elementId" value="{GP:elementId}"><input type="submit" value="V&aelig;lg" /></form></div>
 [global]
