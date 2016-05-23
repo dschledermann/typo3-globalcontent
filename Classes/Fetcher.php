@@ -26,13 +26,13 @@ class Fetcher {
 		$this->fetcher = $fetcher;
 		$this->cacheKey = md5($this->url);
 
-		// Set cache-lifetime for 12 hours.
-		$this->cacheLifetime = 60 * 60 * 12;
-
 		// Get fetcher from configuration.
 		if ($this->fetcher == "") {
 			$this->fetcher = \Linkfactory\Globalcontent\Configuration::getFromConfiguration("fetcher", "passthrough");
 		}
+
+		// Read the cache-lifetime from the settings
+		$this->cacheLifetime = \Linkfactory\Globalcontent\Configuration::getFromConfiguration("cachetimeout", 43200);
 	}
 
 	/**

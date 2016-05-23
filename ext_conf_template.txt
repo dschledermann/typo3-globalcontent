@@ -1,2 +1,5 @@
 # cat=basic; type=options[Passthrough=passthrough, Cached=cached, jQuery=jquery, Varnish=varnish]; label=Fetcher: Choose which fetcher should be used to get/cache content.
 fetcher = passthrough
+
+# cat=basic; type=int, label=Cache-timeout: The timeout in seconds for cached elements
+cachetimeout = 43200
