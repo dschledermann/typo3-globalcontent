@@ -122,7 +122,7 @@ class Eid {
 		);
 		$url = $this->buildUrl($url, $parameters);
 
-		$data = file_get_contents($fetchUrl);
+		$data = preg_replace("|<script>[\s\S]*</script>|Ui", "", file_get_contents($fetchUrl));
 
 		// Make sure utf8-encoding are removed and clean data.
 		if (mb_detect_encoding($data, 'UTF-8', true) == 'UTF-8') {
