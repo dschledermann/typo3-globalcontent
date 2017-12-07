@@ -3,7 +3,7 @@
 /**
  * Plugin for fetching content.
  */
-class tx_globalcontent_pi1 extends tslib_pibase {
+class tx_globalcontent_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 	var $prefixId = 'tx_globalcontent_pi1';
 	var $scriptRelPath = 'pi1/class.tx_globalcontent_pi1.php';
 	var $extKey = 'globalcontent';

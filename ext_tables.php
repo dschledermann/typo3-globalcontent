@@ -39,14 +39,9 @@ $tempColumnsTtContent = Array (
 );
 
 if (version_compare(TYPO3_branch, '6.1', '<')) {
-    \TYPO3\CMS\Core\Utility\GeneralUtility::loadTCA('tt_content');
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumnsTtContent, 1);
 } else {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumnsTtContent);
-}
-
-if (version_compare(TYPO3_branch, '6.1', '<')) {
-    \TYPO3\CMS\Core\Utility\GeneralUtility::loadTCA('tt_content');
 }
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, "static/", "Global Content Page types");

@@ -41,7 +41,7 @@ class Wizicon {
 			);
 		} else {
 			$llFile = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('globalcontent') . 'locallang.xlf';
-			$LOCAL_LANG = \TYPO3\CMS\Core\Utility\GeneralUtility::readLLXMLfile($llFile, $GLOBALS['LANG']->lang);
+			$LOCAL_LANG = \TYPO3\CMS\Core\Localization\Parser\LocallangXmlParser::getParsedData($llFile, $GLOBALS['LANG']->lang);
 		}
 		return $LOCAL_LANG;
 	}
