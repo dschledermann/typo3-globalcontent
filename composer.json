@@ -1,6 +1,10 @@
 {
-    "name": "dschledermann/globalcontent",
-    "description": "",
-    "type": "typo3-cms-extension",
-    "version": "2.3.1"
+ "name": "dschledermann/globalcontent",
+ "description": "",
+ "type": "typo3-cms-extension",
+ "version": "2.3.1",
+ "autoload": {
+  "psr-4": {
+   "Linkfactory\\Globalcontent\\": "Classes/"
+  }
 }
