@@ -7,4 +7,5 @@
   "psr-4": {
    "Linkfactory\\Globalcontent\\": "Classes/"
   }
+ }
 }
