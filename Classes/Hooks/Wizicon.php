@@ -34,7 +34,7 @@ class Wizicon {
 	 * @return array The LOCAL_LANG array
 	 */
 	function includeLocalLang()    {
-		$llFile = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('pure') . 'locallang.xml';
+		$llFile = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('globalcontent') . 'locallang.xml';
 		$parser = new \TYPO3\CMS\Core\Localization\Parser\XliffParser();
 		return $parser->getParsedData($llFile, $GLOBALS['LANG']->lang);
 	}
