@@ -34,15 +34,8 @@ class Wizicon {
 	 * @return array The LOCAL_LANG array
 	 */
 	function includeLocalLang()    {
-		if (class_exists("\\TYPO3\\CMS\\Core\\Utility\\GeneralUtility")) {
-			$LOCAL_LANG = \TYPO3\CMS\Core\Utility\GeneralUtility::readLLfile(
-				\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('globalcontent') . 'locallang.xlf',
-				$GLOBALS['LANG']->lang
-			);
-		} else {
-			$llFile = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('globalcontent') . 'locallang.xlf';
-			$LOCAL_LANG = \TYPO3\CMS\Core\Localization\Parser\LocallangXmlParser::getParsedData($llFile, $GLOBALS['LANG']->lang);
-		}
-		return $LOCAL_LANG;
+		$llFile = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('pure') . 'locallang.xml';
+		$parser = new \TYPO3\CMS\Core\Localization\Parser\XliffParser();
+		return $parser->getParsedData($llFile, $GLOBALS['LANG']->lang);
 	}
 }
