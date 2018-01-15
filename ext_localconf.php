@@ -23,8 +23,8 @@ if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations
 
 // Add cache-handler.
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][] =
-	'EXT:' . $_EXTKEY . '/Classes/Hooks/Cacheproc.php:&\\Linkfactory\\Globalcontent\\Hooks\\Cacheproc->clearCache';
+	'EXT:' . $_EXTKEY . '/Classes/Hooks/Cacheproc.php:Linkfactory\\Globalcontent\\Hooks\\Cacheproc->clearCache';
 
 // Add tcemain-handler.
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] =
-	'EXT:' . $_EXTKEY . '/Classes/Hooks/Tcemain.php:\\Linkfactory\\Globalcontent\\Hooks\\Tcemain';
+	'EXT:' . $_EXTKEY . '/Classes/Hooks/Tcemain.php:Linkfactory\\Globalcontent\\Hooks\\Tcemain';
