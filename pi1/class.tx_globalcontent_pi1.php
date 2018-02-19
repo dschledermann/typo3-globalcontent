@@ -27,8 +27,7 @@ class tx_globalcontent_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 		}
 
 		// Initialize fetcher and get content.
-		$fetcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance("\\Linkfactory\\Globalcontent\\Fetcher", $fetchUrl, $fetcher);
+		$fetcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance("Linkfactory\\Globalcontent\\Fetcher", $fetchUrl, $fetcher);
 		return $fetcher->getContent();
 	}
 }
-

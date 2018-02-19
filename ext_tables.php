@@ -3,46 +3,42 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$tempColumnsTtContent = Array (
-	'tx_globalcontent_link' => Array(
+$tempColumnsTtContent = [
+	'tx_globalcontent_link' => [
 		'exclude' => 0,
 		'label' => 'Test',
-		'config' => Array (
+		'config' => [
 			'type' => 'passthrough',
 			'size' => 30,
-		)
-	),
-	'tx_globalcontent_orgurl' => Array(
+		]
+	],
+	'tx_globalcontent_orgurl' => [
 		'exclude' => 0,
 		'label' => 'Orginal url',
-		'config' => Array (
+		'config' => [
 			'type' => 'passthrough',
 			'size' => 30,
-		)
-	),
-	'tx_globalcontent_fetcher' => Array(
-			'exclude' => 0,
-			'label' => 'Fetcher',
-			'config' => Array (
-					'type' => 'passthrough',
-					'size' => 30,
-			)
-	),
-	"tx_globalcontent" => Array (
+		]
+	],
+	'tx_globalcontent_fetcher' => [
+		'exclude' => 0,
+		'label' => 'Fetcher',
+		'config' => [
+			'type' => 'passthrough',
+			'size' => 30,
+		]
+	],
+	"tx_globalcontent" => [
 		"exclude" => 0,
 		"label" => "LLL:EXT:" . $_EXTKEY . "/locallang.xlf:pi_title",
-		"config" => Array(
+		"config" => [
 			"type" => "user",
-			"userFunc" => '\\Linkfactory\\Globalcontent\\Hooks\\Userfuncs->main',
-		),
-	),
-);
+			"userFunc" => 'Linkfactory\\Globalcontent\\Hooks\\Userfuncs->main',
+		],
+	],
+];
 
-if (version_compare(TYPO3_branch, '6.1', '<')) {
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumnsTtContent, 1);
-} else {
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumnsTtContent);
-}
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumnsTtContent);
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, "static/", "Global Content Page types");
 
