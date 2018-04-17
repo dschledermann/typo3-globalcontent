@@ -46,7 +46,7 @@ class Userfuncs {
 		$fetcher = trim($params['row']['tx_globalcontent_fetcher']);
 
 		// Setup form.
-		$pObj->additionalCode_pre['iframeElement'] = '
+		$content = '
 			<script type="text/javascript">
 				function getUrl() {
 					var prox = "' . \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_SITE_URL') . '?eID=globalcontent&mode=chooseElement";
@@ -61,7 +61,7 @@ class Userfuncs {
 					return false;
 				}
 			</script>';
-		$content = '<table>';
+		$content .= '<table>';
 
 		// Add select for fetcher.
 		$fetchers = $this->getListOfFetchers();
